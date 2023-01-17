@@ -35,7 +35,7 @@ const Nav = () => {
   return (
     <div className="bg-indigo-600 dark:shadow-lg dark:backdrop-blur-md dark:bg-gray-800/90 relative px-6 py-2">
       <nav className="flex justify-between items-center relative  ">
-        <Link className="bg-white  rounded-lg active ">
+        <Link to="/" className="bg-white  rounded-lg active ">
           <img src={logo} alt="" className="w-[80px]" />
         </Link>
         <ul className="md:flex hidden text-white md:space-x-4">
