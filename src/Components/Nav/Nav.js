@@ -12,6 +12,7 @@ const Nav = () => {
   const [displayNav, setDisplayNav] = useState(false);
   //Theme Switcher start
   const [isDark, setIsDark] = useState();
+
   const setDark = () => {
     localStorage.setItem("theme", "dark");
     setIsDark(true);
@@ -25,7 +26,7 @@ const Nav = () => {
   };
   useEffect(() => {
     const isTheme = localStorage.theme;
-    if (isTheme) {
+    if (isTheme === "dark") {
       setIsDark(true);
     } else {
       setIsDark(false);
