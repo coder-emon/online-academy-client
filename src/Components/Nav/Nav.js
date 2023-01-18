@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
@@ -35,24 +35,24 @@ const Nav = () => {
   return (
     <div className="bg-indigo-600 dark:shadow-lg dark:backdrop-blur-md dark:bg-gray-800/90 relative px-6 py-2">
       <nav className="flex justify-between items-center relative  ">
-        <Link to="/" className="bg-white  rounded-lg active ">
+        <NavLink to="/" className="bg-white  rounded-lg active ">
           <img src={logo} alt="" className="w-[80px]" />
-        </Link>
+        </NavLink>
         <ul className="md:flex hidden text-white md:space-x-4">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <NavLink to="/courses">Courses</NavLink>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <NavLink to="/blog">Blog</NavLink>
           </li>
           <li>
-            <Link to="faq">Faq</Link>
+            <NavLink to="faq">Faq</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           {user?.uid ? (
             <img
@@ -63,10 +63,10 @@ const Nav = () => {
           ) : (
             <>
               <li>
-                <Link to="/login">Login</Link>
+                <NavLink to="/login">Login</NavLink>
               </li>
               <li>
-                <Link to="/register">Register</Link>
+                <NavLink to="/register">Register</NavLink>
               </li>
             </>
           )}
@@ -97,19 +97,19 @@ const Nav = () => {
         {displayNav ? (
           <ul className=" md:hidden flex flex-col top-14 justify-center items-center py-3 gap-2 bg-slate-500 absolute w-full  right-0  text-white md:space-x-4">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/courses">Courses</Link>
+              <NavLink to="/courses">Courses</NavLink>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <NavLink to="/blog">Blog</NavLink>
             </li>
             <li>
-              <Link to="faq">Faq</Link>
+              <NavLink to="faq">Faq</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
             {user?.uid ? (
               <>
@@ -125,10 +125,10 @@ const Nav = () => {
             ) : (
               <>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <NavLink to="/login">Login</NavLink>
                 </li>
                 <li>
-                  <Link to="/register">Register</Link>
+                  <NavLink to="/register">Register</NavLink>
                 </li>
               </>
             )}
