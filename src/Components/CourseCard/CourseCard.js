@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight, FaRegComment, FaRegEye, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import StartRating from "../StarRating/StartRating";
 
 const CourseCard = ({ course }) => {
   const {
@@ -37,11 +38,7 @@ const CourseCard = ({ course }) => {
           <p className="flex items-center text text-yellow-500">
             <span>{rating}</span>&nbsp;
             <span className="flex ">
-              <FaStar></FaStar>
-              <FaStar></FaStar>
-              <FaStar></FaStar>
-              <FaStar></FaStar>
-              <FaStar></FaStar>
+              <StartRating stars={rating}></StartRating>
             </span>
             &nbsp;
             <span className="text-gray-400 dark:text-gray-200">
