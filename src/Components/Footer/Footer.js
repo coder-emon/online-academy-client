@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex justify-start items-end space-x-3 ">
               <div className="w-50 sm:w-64">
                 <label
-                  for="subscribe"
+                  htmlFor="subscribe"
                   className="leading-7 text-gray-600 dark:text-gray-200"
                 >
                   placeholder

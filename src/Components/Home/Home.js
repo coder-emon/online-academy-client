@@ -15,7 +15,7 @@ const Home = () => {
             Explore our courses
           </h2>
           <div className="flex flex-wrap  ">
-            {courses.map((course) => (
+            {courses?.map((course) => (
               <CourseCard course={course} key={course.id}></CourseCard>
             ))}
           </div>

@@ -22,15 +22,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses",
+        loader: () => fetch("http://localhost:5000/courses"),
         element: <Courses></Courses>,
       },
       {
-        path: "/category:id",
+        path: "/category/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
         element: <Courses></Courses>,
       },
       {
         path: "/course/:id",
-
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/courses/${params.id}`),
         element: <CourseDetails></CourseDetails>,
       },
       {

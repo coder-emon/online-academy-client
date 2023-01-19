@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowRight, FaRegComment, FaRegEye, FaStar } from "react-icons/fa";
+import { FaArrowRight, FaRegComment, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import StartRating from "../StarRating/StartRating";
 
@@ -7,15 +7,13 @@ const CourseCard = ({ course }) => {
   const {
     id,
     courseTitle,
-    author,
+
     imageURL,
     category,
     rating,
     numberOfReview,
     regularPrice,
     discountPrice,
-    bestSellarBadge,
-    category_id,
   } = course;
   return (
     <div className="p-4 w-full md:w-1/3 ">
@@ -35,7 +33,7 @@ const CourseCard = ({ course }) => {
           <p className="leading-relaxed text-gray-400 dark:text-gray-200">
             {courseTitle.slice(0, 55)}...
           </p>
-          <p className="flex items-center text text-yellow-500">
+          <div className="flex items-center text text-yellow-500">
             <span>{rating}</span>&nbsp;
             <span className="flex ">
               <StartRating stars={rating}></StartRating>
@@ -44,7 +42,7 @@ const CourseCard = ({ course }) => {
             <span className="text-gray-400 dark:text-gray-200">
               ({numberOfReview})
             </span>
-          </p>
+          </div>
           <p className="flex items-center text-gray-400 dark:text-gray-200">
             <span className="font-semibold text-lg">${regularPrice}</span>&nbsp;
             <span className="line-through">${discountPrice}</span>
