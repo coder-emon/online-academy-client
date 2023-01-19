@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-slate-100 dark:bg-slate-700">
-        <div className="container mx-auto md:flex justify-between px-3 py-3 text-center">
+        <div className="container mx-auto md:flex justify-between px-3 py-3 text-center text-gray-700 dark:text-gray-200 ">
           <p>© 2023 Emon Howlader</p>
           <p>Enamel pin tousled raclette tacos irony</p>
         </div>
