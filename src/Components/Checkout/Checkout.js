@@ -3,14 +3,13 @@ import { useLoaderData } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-hot-toast";
 const Checkout = () => {
-  const { courseTitle, imageURL, category, regularPrice, discountPrice } =
-    useLoaderData();
+  const { courseTitle, imageURL, category, regularPrice } = useLoaderData();
   const fakeOrder = (e) => {
     e.preventDefault();
     toast.success("Fake Order Placed");
   };
   return (
-    <div className="bg-slate-100 dark:text-white dark:bg-slate-100">
+    <div className="bg-slate-100 dark:text-white dark:bg-slate-700">
       <div className="container mx-auto">
         <h1 className="flex justify-start items-center font-bold text-blue-600 dark:text-blue-400 text-md md:text-3xl py-3 pl-6">
           Checkout for {courseTitle}
