@@ -4,10 +4,7 @@ import logo from "../../assets/logo.png";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 const Nav = () => {
-  const user = {
-    img: logo,
-    uid: "123",
-  };
+  const user = {};
 
   const [displayNav, setDisplayNav] = useState(false);
   //Theme Switcher start
