@@ -49,7 +49,7 @@ const Register = () => {
             />
           </div>
           <button
-            className="rounded bg-blue-500 hover:bg-blue-600 text-white border-none focus:outline-none w-full px-3 py-2 focus:ring-2"
+            className="rounded bg-blue-600 hover:bg-blue-700 transition-colors text-white border-none focus:outline-none w-full px-3 py-2 focus:ring-2"
             type="submit"
           >
             Register
