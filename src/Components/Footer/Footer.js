@@ -29,11 +29,11 @@ const Footer = () => {
               Bitters chicharrones fanny pack waistcoat green juice
             </p>
           </div>
-          <div className="flex space-x-3 justify-center md:justify-end items-end w-1/2 text-lg">
-            <FaFacebook></FaFacebook>
-            <FaTwitter></FaTwitter>
-            <FaInstagram></FaInstagram>
-            <FaLinkedin></FaLinkedin>
+          <div className="flex space-x-3 justify-center md:justify-end dark:text-white items-end w-1/2 text-lg ">
+            <FaFacebook className="cursor-pointer"></FaFacebook>
+            <FaTwitter className="cursor-pointer"></FaTwitter>
+            <FaInstagram className="cursor-pointer"></FaInstagram>
+            <FaLinkedin className="cursor-pointer"></FaLinkedin>
           </div>
         </div>
       </div>
