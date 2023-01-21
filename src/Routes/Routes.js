@@ -66,10 +66,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog",
+        loader: () => fetch("http://localhost:5000/blogs"),
         element: <Blog></Blog>,
       },
       {
         path: "/blog/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/blog/${params.id}`),
         element: <BlogDetails></BlogDetails>,
       },
       {
