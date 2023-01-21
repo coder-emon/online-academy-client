@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import CourseCard from "../CourseCard/CourseCard";
+import Loader from "../Loder/Loader";
 
 const Courses = () => {
   const courses = useLoaderData();
@@ -13,8 +14,10 @@ const Courses = () => {
     };
     fetchData().catch(console.error);
   }, []);
-  console.log(courses);
-  console.log(categories);
+
+  if (!courses) {
+    return <Loader></Loader>;
+  }
   return (
     <div>
       <div className="flex flex-col-reverse md:flex-row">

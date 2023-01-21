@@ -5,11 +5,15 @@ import Checkout from "../Components/Checkout/Checkout";
 import Contact from "../Components/Contact/Contact";
 import CourseDetails from "../Components/CourseDetails/CourseDetails";
 import Courses from "../Components/Courses/Courses";
+import Dashboard from "../Components/Dashboard/Dashboard";
 import Faq from "../Components/Faq/Faq";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import Reset from "../Components/Reset/Reset";
+import UpdateProfile from "../Components/UpadateProfile/UpdateProfile";
 import Main from "../Main/Main";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -24,25 +28,41 @@ export const router = createBrowserRouter([
       {
         path: "/courses",
         loader: () => fetch("http://localhost:5000/courses"),
-        element: <Courses></Courses>,
+        element: (
+          <PrivateRoute>
+            <Courses></Courses>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/category/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.id}`),
-        element: <Courses></Courses>,
+        element: (
+          <PrivateRoute>
+            <Courses></Courses>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/course/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/courses/${params.id}`),
-        element: <CourseDetails></CourseDetails>,
+        element: (
+          <PrivateRoute>
+            <CourseDetails></CourseDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/checkout/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/courses/${params.id}`),
-        element: <Checkout></Checkout>,
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blog",
@@ -67,6 +87,26 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/reset",
+        element: <Reset></Reset>,
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

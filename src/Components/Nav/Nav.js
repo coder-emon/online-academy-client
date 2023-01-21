@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
+import { AuthContext } from "../../Context/Auth.Context";
 const Nav = () => {
-  const user = {};
+  const { user, logOut } = useContext(AuthContext);
 
   const [displayNav, setDisplayNav] = useState(false);
-  //Theme Switcher start
+  const [tooltip, setTolltip] = useState(false);
+  // Theme Switcher start
   const [isDark, setIsDark] = useState();
 
   const setDark = () => {
@@ -54,9 +56,15 @@ const Nav = () => {
           </li>
           {user?.uid ? (
             <img
-              src={user.img}
+              src={user.photoURL}
               alt={user.diplayName}
               className="h-8 w-8 rounded-full"
+              onMouseEnter={() => {
+                setTolltip(true);
+              }}
+              onMouseLeave={() => {
+                setTolltip(false);
+              }}
             />
           ) : (
             <>
@@ -116,7 +124,10 @@ const Nav = () => {
                   alt={user.diplayName}
                   className="h-8 w-8 rounded-full"
                 />
-                <button className="bg-blue-500 dark:bg-sky-800 dark:hover:bg-sky-900 hover:bg-blue-600 py-2 px-3 rounded">
+                <button
+                  className="bg-blue-500 dark:bg-sky-800 dark:hover:bg-sky-900 hover:bg-blue-600 py-2 px-3 rounded"
+                  onClick={logOut}
+                >
                   Logout
                 </button>
               </>
@@ -133,7 +144,30 @@ const Nav = () => {
           </ul>
         ) : null}
       </nav>
-      <div className=""></div>
+      {tooltip && (
+        <div
+          className="bg-slate-400 w-auto h-[120px] p-5 flex flex-col justify-center items-center space-y-3 rounded-md absolute right-12 top-[55px]"
+          onMouseEnter={() => {
+            setTolltip(true);
+          }}
+          onMouseLeave={() => {
+            setTolltip(false);
+          }}
+        >
+          <Link
+            to="/dashboard"
+            className="bg-blue-500 hover:bg-blue-600 dark:bg-sky-900 dark:hover:bg-sky-900 py-2 px-3 rounded text-white w-full text-center"
+          >
+            {user?.displayName}
+          </Link>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 dark:bg-sky-900 dark:hover:bg-sky-900 py-2 px-3 rounded text-white w-full"
+            onClick={logOut}
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </div>
   );
 };
