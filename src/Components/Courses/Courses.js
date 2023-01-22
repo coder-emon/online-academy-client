@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import CourseCard from "../CourseCard/CourseCard";
 import Loader from "../Loder/Loader";
 
 const Courses = () => {
+  const location = useLocation();
+
+  useTitle(location.pathname);
   const courses = useLoaderData();
   const [categories, setCategories] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:5000/categories");
+      const data = await fetch(
+        "https://online-academy-server.vercel.app/categories"
+      );
       const json = await data.json();
       setCategories(json);
     };

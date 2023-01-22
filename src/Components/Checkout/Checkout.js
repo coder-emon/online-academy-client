@@ -2,7 +2,9 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-hot-toast";
+import useTitle from "../../Hooks/useTitle";
 const Checkout = () => {
+  useTitle("Checkout");
   const { courseTitle, imageURL, category, regularPrice } = useLoaderData();
   const fakeOrder = (e) => {
     e.preventDefault();

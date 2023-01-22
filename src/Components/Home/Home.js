@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import CourseCard from "../CourseCard/CourseCard";
 import Hero from "../Hero/Hero";
 const Home = () => {
+  useTitle("Home");
   const courses = useLoaderData();
 
   return (

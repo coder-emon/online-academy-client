@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Auth.Context";
+import useTitle from "../../Hooks/useTitle";
 
 const Dashboard = () => {
+  useTitle("Dashboard");
   const { user, verifyEmail, deleteProfile } = useContext(AuthContext);
 
   return (

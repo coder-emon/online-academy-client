@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 
 const Contact = () => {
+  useTitle("Contact");
   return (
     <div className="py-7 bg-slate-100 dark:bg-slate-700">
       <div className="flex justify-center mb-28">

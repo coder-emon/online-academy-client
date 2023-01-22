@@ -3,8 +3,10 @@ import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import resetImg from "../../assets/forgot_password_re_hxwm.svg";
 import { AuthContext } from "../../Context/Auth.Context";
+import useTitle from "../../Hooks/useTitle";
 
 const Reset = () => {
+  useTitle("Reset");
   const { resetPassword } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {

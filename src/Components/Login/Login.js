@@ -5,8 +5,10 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/undraw_helpful_sign_re_8ms5.svg";
 import { AuthContext } from "../../Context/Auth.Context";
+import useTitle from "../../Hooks/useTitle";
 import Loader from "../Loder/Loader";
 const Login = () => {
+  useTitle("Login");
   const { logIn, googleSignIn, githubSignIn, setUser, setLoading, loading } =
     useContext(AuthContext);
   const [userInfo, setUserInfo] = useState({

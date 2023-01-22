@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import BlogCard from "../BlogCard/BlogCard";
 
 const Blog = () => {
+  useTitle("Blogs");
   const blogs = useLoaderData();
   return (
     <div className="bg-slate-100 dark:bg-slate-700">

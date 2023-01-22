@@ -22,12 +22,12 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://online-academy-server.vercel.app/courses"),
         element: <Home></Home>,
       },
       {
         path: "/courses",
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://online-academy-server.vercel.app/courses"),
         element: (
           <PrivateRoute>
             <Courses></Courses>
@@ -37,7 +37,9 @@ export const router = createBrowserRouter([
       {
         path: "/category/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(
+            `https://online-academy-server.vercel.app/category/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <Courses></Courses>
@@ -47,7 +49,9 @@ export const router = createBrowserRouter([
       {
         path: "/course/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(
+            `https://online-academy-server.vercel.app/courses/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <CourseDetails></CourseDetails>
@@ -57,7 +61,9 @@ export const router = createBrowserRouter([
       {
         path: "/checkout/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(
+            `https://online-academy-server.vercel.app/courses/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
@@ -66,13 +72,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        loader: () => fetch("http://localhost:5000/blogs"),
+        loader: () => fetch("https://online-academy-server.vercel.app/blogs"),
         element: <Blog></Blog>,
       },
       {
         path: "/blog/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/blog/${params.id}`),
+          fetch(`https://online-academy-server.vercel.app/blog/${params.id}`),
         element: <BlogDetails></BlogDetails>,
       },
       {

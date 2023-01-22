@@ -4,7 +4,9 @@ import { BsShieldLock } from "react-icons/bs";
 import { Link, useLoaderData } from "react-router-dom";
 import StartRating from "../StarRating/StartRating";
 import ReactToPdf from "react-to-pdf";
+import useTitle from "../../Hooks/useTitle";
 const CourseDetails = () => {
+  useTitle("Course Details");
   const {
     id,
     courseTitle,
@@ -22,7 +24,9 @@ const CourseDetails = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:5000/categories");
+      const data = await fetch(
+        "https://online-academy-server.vercel.app/categories"
+      );
       const json = await data.json();
       setCategories(json);
     };

@@ -3,8 +3,10 @@ import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import registerImg from "../../assets/undraw_access_account_re_8spm (1).svg";
 import { AuthContext } from "../../Context/Auth.Context";
+import useTitle from "../../Hooks/useTitle";
 
 const UpdateProfile = () => {
+  useTitle("Update Profile");
   const { updateUser, updatePass, updateMail, verifyEmail, setLoading } =
     useContext(AuthContext);
   const [userInfo, setUserInfo] = useState({
